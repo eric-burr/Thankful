@@ -1,0 +1,47 @@
+.month {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: repeat(7 1fr);
+    grid-template-rows: repeat(4 1fr);
+    
+ }
+
+
+ .week0 {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+     background: lightskyblue;
+ }
+ .week1{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+     background: salmon;
+ }
+ .week2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: violet;
+}
+.week3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: gray;
+}
+ .day0 {
+     background: orange;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+ .day1 {
+     background: violet;
+     display: grid;
+
+ }
+ .day2 {
+     background: forestgreen;
+ }
+ .day3 {
+     background: burlywood
+ }
