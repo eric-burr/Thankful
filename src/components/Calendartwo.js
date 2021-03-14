@@ -3,70 +3,66 @@ import '../calendar.css'
 
 export class Calendartwo extends Component {
     state = {
-        calendar: []
+        calendar: [],
+        months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     }
 
-    // createcalendar = () => {
-    //     const create = document.createElement("div");
-    //     create.innerText = 'newmonth'
-    //     console.log('what is', create)
-    //     create.classList.add("month")
-    //     document.body.appendChild(create);
-    //     for(let i = 0; i<=3; i++){
-    //         const newWeek = document.createElement("div");
-    //         newWeek.innerHTML = 'this is the wek'
-    //         newWeek.classList.add('week'+i)
-    //         for(let j = 0; j<=6;j++){
-    //             const newDay = document.createElement("div");
-    //             newDay.innerHTML = "this is the day"
-    //             newDay.classList.add('day'+j) 
-    //             console.log('newday', newDay)
-    //         }
-    //         console.log('in the loop', newWeek)
-    //         document.body.appendChild(newWeek);
-    //     }
-    // }
+    
+
+    createcalendar = (year, month) => {
+        const today = new Date();
+        const currentMonth = today.getMonth();
+        const currentYear = today.getFullYear();
+        const firstDay = new Date(year, month).getDay();
+        console.log('first day is', firstDay)
+        const daysInMonth = 32 - new Date(currentYear, currentMonth, 32).getDate();
+        console.log('days in month', daysInMonth)
+    }
+
+    
+
     render() {
         return (
             <div>
-                {/* <button onClick={this.createcalendar}>to create calendar</button> */}
-                <div className="month"> <div className="header">The Calendar</div>
+                <button onClick={this.createcalendar(this.currentYear, this.currentMonth)}>to create calendar</button>
+                <div className="month"> 
+                    <div className="header">The Calendar</div>
                     <div className="week" style={{background: 'LightSkyBlue'}}>
+                        <div className="sunday">Sunday</div>
                         <div className="monday">Monday</div>
                         <div className="tuesday">Tuesday</div>
-                        <div className="wednesday"> wednesday</div>
-                        <div className="thursday">thursday</div>
-                        <div className="friday">friday</div>
-                        <div className="saturday">saturday</div>
-                        <div className="sunday">sunday</div>
+                        <div className="wednesday">Wednesday</div>
+                        <div className="thursday">Thursday</div>
+                        <div className="friday">Friday</div>
+                        <div className="saturday">Saturday</div>
                     </div>
                         
                     <div className="week" style={{background: 'LightSalmon'}}>
+                        <div className="sunday">Sunday</div>
                         <div className="monday">Monday</div>
                         <div className="tuesday">Tuesday</div>
-                        <div className="wednesday"> wednesday</div>
-                        <div className="thursday">thursday</div>
-                        <div className="friday">friday</div>
-                        <div className="saturday">saturday</div>
-                        <div className="sunday">sunday</div>
+                        <div className="wednesday">Wednesday</div>
+                        <div className="thursday">Thursday</div>
+                        <div className="friday">Friday</div>
+                        <div className="saturday">Saturday</div>
                     </div>
                     <div className="week" style={{background: 'PaleTurquoise'}}>
+                        <div className="sunday">Sunday</div>
                         <div className="monday">Monday</div>
                         <div className="tuesday">Tuesday</div>
-                        <div className="wednesday"> wednesday</div>
-                        <div className="thursday">thursday</div>
-                        <div className="friday">friday</div>
-                        <div className="saturday">saturday</div>
-                        <div className="sunday">sunday</div>
+                        <div className="wednesday">Wednesday</div>
+                        <div className="thursday">Thursday</div>
+                        <div className="friday">Friday</div>
+                        <div className="saturday">Saturday</div>
                     </div>
                     <div className="week" style={{background: 'LightPink'}}>
+                        <div className="sunday">Sunday</div>
                         <div className="monday">Monday</div>
                         <div className="tuesday">Tuesday</div>
-                        <div className="wednesday"> wednesday</div>
-                        <div className="thursday">thursday</div>
-                        <div className="friday">friday</div>
-                        <div className="saturday">saturday</div>
-                        <div className="sunday">sunday</div>
+                        <div className="wednesday">Wednesday</div>
+                        <div className="thursday">Thursday</div>
+                        <div className="friday">Friday</div>
+                        <div className="saturday">Saturday</div>
                     </div>
                     
                 </div>
