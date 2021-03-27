@@ -9,6 +9,7 @@ function Calandar() {
   var date = new Date();
   var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
   var firstdayofmonth = firstDay.getDay();
+  var lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0);
 
   const dates = [0]
   let first = 0

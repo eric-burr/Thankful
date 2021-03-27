@@ -5,7 +5,8 @@ export default function Week(props) {
     var date = new Date();
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
     var firstdayofmonth = firstDay.getDay();
-   
+   let currentMonth = date.getMonth();
+   console.log('currentmonth', currentMonth)
     
     return (
         <div>
@@ -20,7 +21,7 @@ export default function Week(props) {
               {firstdayofmonth} 
           </div> 
           : 
-          <div className='sunday'></div>
+          <div key={index} className='sunday'></div>
             })}
             </div>
         </div>
