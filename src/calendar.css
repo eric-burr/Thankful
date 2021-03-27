@@ -6,24 +6,34 @@
  .monday {
      background: green;
      display: grid;
+     min-width: 200px;
  }
  .tuesday {
      background: white;
+     min-width: 200px;
  }
  .wednesday {
-     background: green
+     background: green;
+     min-width: 200px;
  }
  .thursday {
     background: white;
+    min-width: 200px;
 }
 .friday{
     background: green;
+    min-width: 200px;
 }
 .saturday{
     background: white;
+    min-width: 200px;
 }
 .sunday{
     background: white;
+    min-width: 200px;
+    min-height: 40px;
+    border: solid;
+    border-right: solid;
 }
 
  .week {

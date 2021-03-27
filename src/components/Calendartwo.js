@@ -4,32 +4,41 @@ import '../calendar.css'
 export class Calendartwo extends Component {
     state = {
         calendar: [],
-        months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        day: "the thing"
     }
 
     
 
-    createcalendar = (year, month) => {
-        const today = new Date();
-        const currentMonth = today.getMonth();
-        const currentYear = today.getFullYear();
-        const firstDay = new Date(year, month).getDay();
+    createcalendar = () => {
+        var date = new Date();
+        var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+        var firstdayofmonth = firstDay.getDay();
+        console.log('first day of month', firstdayofmonth)
         console.log('first day is', firstDay)
-        const daysInMonth = 32 - new Date(currentYear, currentMonth, 32).getDate();
-        console.log('days in month', daysInMonth)
+        var lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0);
+        console.log('last day is', lastDay.getDay())
+        for(let i = 0; i<=6; i++) {
+            if(firstdayofmonth === i) {
+                console.log('a match', i)
+                console.log('firstday', firstdayofmonth)
+                this.setState({
+                    day: i
+                })
+            } else console.log('no dice')
+        }
     }
 
-    
 
     render() {
         return (
             <div>
-                <button onClick={this.createcalendar(this.currentYear, this.currentMonth)}>to create calendar</button>
+                <button onClick={this.createcalendar}>to create calendar</button>
                 <div className="month"> 
                     <div className="header">The Calendar</div>
                     <div className="week" style={{background: 'LightSkyBlue'}}>
                         <div className="sunday">Sunday</div>
-                        <div className="monday">Monday</div>
+                        <div className="monday">{this.state.day}</div>
                         <div className="tuesday">Tuesday</div>
                         <div className="wednesday">Wednesday</div>
                         <div className="thursday">Thursday</div>

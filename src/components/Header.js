@@ -28,7 +28,7 @@ function Header() {
         <div>
             I am Thankful
             <button type='button' onClick={api}>Get fun stuff</button>
-            <h1>{quote}</h1>
+            <h1>{quote}</h1>       
         </div>
     )
 }
