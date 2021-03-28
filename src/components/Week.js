@@ -5,8 +5,8 @@ export default function Week(props) {
     var date = new Date();
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
     var firstdayofmonth = firstDay.getDay();
-   let currentMonth = date.getMonth();
-   console.log('currentmonth', currentMonth)
+    var lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0);
+    var lastdayofMonth = lastDay.getDate();
     
     return (
         <div>
@@ -15,10 +15,10 @@ export default function Week(props) {
             {props.dates.map((value, index) => {
                 //comparing to index since it could only be 0-7
                 //so it'll be on the first line of the calendar
-                return firstdayofmonth===index ?
+                return firstdayofmonth<=index && index <= lastdayofMonth ?
                 
           <div key={index} className='sunday'>
-              {firstdayofmonth} 
+              {index} 
           </div> 
           : 
           <div key={index} className='sunday'></div>
