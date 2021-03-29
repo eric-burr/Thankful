@@ -11,3 +11,40 @@
      display: grid;
      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  }
+
+.fade {
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    color: black;
+    text-transform: none;
+    margin: 0 20px;
+    opacity: 0.0;
+    animation: fadeIn ease 10s;
+    -webkit-animation: fadeIn ease 10s;
+    }
+    
+    @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }

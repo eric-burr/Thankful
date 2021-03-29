@@ -18,7 +18,6 @@ export default function Week(props) {
             
             <div className='week'>
             {props.dates.map((value, index) => {
-                console.log('one week.js', props.dates)
                 return firstdayofmonth<=index && index <= lastdayofMonth ?
                 
                 <div key={index} className='sunday'>

@@ -1,29 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Header from './components/Header'
 import Needhelp from './components/Needhelp'
 import Calendar from './components/Calandar'
 import Thankfulentry from './components/Thankfulentry'
+import '../src/calendar.css'
 
 function App() {
+  const [view, changeview] = useState(false)
   const dates = [0]
   let first = 0
   for(let i=0;i<=33;i++) {
       ++first
       dates.push(first)
   }
+//  useEffect(()=> {
+//    console.log('are you there', dates)
+//    while(date < date + 3) {
+//      changeview(!view)
+//    }
+//  }) 
+ 
+ const date = new Date().getSeconds();
 
- useEffect(()=> {
-   console.log('are you there', dates)
- })  
+
 
   return (
     <div className="App">
-      <Header />
-      <Thankfulentry date={dates} />
+        
+      { view === false ? <div>
+        <Header />
+      </div> 
+        : 
+        <h1>
+          <Thankfulentry date={dates} />
       <Needhelp />
-      <Calendar dates={dates} />
-
+       <Calendar dates={dates} /> 
+          </h1>}  
     </div>
   );
 }
