@@ -1,33 +1,4 @@
-.month {
-    font-size: 40px;
-    background: skyblue;    
- }
 
- .monday {
-     background: green;
-     display: grid;
-     min-width: 200px;
- }
- .tuesday {
-     background: white;
-     min-width: 200px;
- }
- .wednesday {
-     background: green;
-     min-width: 200px;
- }
- .thursday {
-    background: white;
-    min-width: 200px;
-}
-.friday{
-    background: green;
-    min-width: 200px;
-}
-.saturday{
-    background: white;
-    min-width: 200px;
-}
 .sunday{
     background: white;
     min-width: 200px;

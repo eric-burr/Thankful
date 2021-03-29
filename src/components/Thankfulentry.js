@@ -5,7 +5,7 @@ class Thankfulentry extends Component {
         super(props)
     
         this.state = {
-             
+            date: this.props.date
         }
     }
 
@@ -13,9 +13,18 @@ class Thankfulentry extends Component {
         this.setState({ [target.name]: target.value});
 }
     
-    submit = () => {
-        
+    submit = (e) => {
+        e.preventDefault();
+        const date = new Date().getDate();
+        console.log('ding')
+        for(let i=0;i<=30;i++) {
+            if(date === this.props.date[i]) {
+                this.props.date[i] = 'a big long story'
+            }
+        }
+        console.log('modifed array', this.state.date)
     }
+
 
     render() {
         return (
@@ -25,9 +34,7 @@ class Thankfulentry extends Component {
                 <input 
                 name='thanks1'
                 onChange={this.handleChange}/>
-                </label>
-                
-                <br />
+                </label>                <br />
                 <label>Item2
                 <input
                 name='thanks2'
