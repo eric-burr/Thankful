@@ -24,7 +24,7 @@ function Header() {
     useEffect(() => {
          api();
          
-    })
+    }, [])
     
 
     return (
