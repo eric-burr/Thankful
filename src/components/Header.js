@@ -1,34 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Header() {
-    const [quote, newQuote] = useState('cheer up')
+    const [quote, newQuote] = useState('thanks')
 
  async function api() {  
     const url = "https://type.fit/api/quotes"
     const response = await fetch(url)
     const data = await response.json();
-    const newArray = []
+    const listofquotes = []
     
-    // grab quotes with the word thank or gratitude
     for(let i = 0;i <= 1642;i++){
         if (data[i].text.match(/thanks|thank|gratitude|appreciation/gi)) {
-                
-            console.log('found it', data[i].text)
-            newArray.push(data[i].text)
-            console.log('jijij', newArray)
+            listofquotes.push(data[i].text)
         }
-       
     }
-    //11 quotes were about gratitude
-    const digit = Math.floor((Math.random() * 11) + 1)
-    const thing = newArray[digit]
-    newQuote(thing)
+    const digit =  Math.floor((Math.random() * 11) + 1)
+    const selectedQuote = listofquotes[digit]
+    
+    
+    newQuote(selectedQuote) 
 }
+
+    useEffect(() => {
+         api();
+         
+    })
+    
+
     return (
         <div>
             I am Thankful
-            <button type='button' onClick={api}>Get fun stuff</button>
-            <h1>{quote}</h1>       
+            <h1>{quote}</h1> 
+            <div></div>
         </div>
     )
 }

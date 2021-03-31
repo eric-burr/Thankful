@@ -8,22 +8,23 @@ import '../src/calendar.css'
 
 function App() {
   const [view, changeview] = useState(false)
+  const [entryview, calendarview] = useState(true)
+
   const dates = [0]
   let first = 0
   for(let i=0;i<=33;i++) {
       ++first
       dates.push(first)
   }
-//  useEffect(()=> {
-//    console.log('are you there', dates)
-//    while(date < date + 3) {
-//      changeview(!view)
-//    }
-//  }) 
+ useEffect(()=> {
+  setTimeout(() => {
+    changeview(true)
+  }, 5000);
+ }) 
  
- const date = new Date().getSeconds();
-
-
+ function viewCalendar() {
+   calendarview(!entryview)
+ }
 
   return (
     <div className="App">
@@ -32,11 +33,20 @@ function App() {
         <Header />
       </div> 
         : 
-        <h1>
-          <Thankfulentry date={dates} />
-      <Needhelp />
-       <Calendar dates={dates} /> 
-          </h1>}  
+        <div>
+          {entryview === true ? 
+          <div> 
+            <Thankfulentry date={dates} />
+            <button onClick={viewCalendar}>Calendar</button>
+          </div>
+          : 
+          <div><Needhelp />
+          <Calendar dates={dates} />
+          <button onClick={viewCalendar}>Entry</button>
+           </div>}
+          
+
+        </div>}  
     </div>
   );
 }

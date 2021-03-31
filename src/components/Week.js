@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Thankfulentry from './Thankfulentry'
+
 export default function Week(props) {
     var date = new Date();
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
