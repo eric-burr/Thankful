@@ -19,7 +19,7 @@ function App() {
  useEffect(()=> {
   setTimeout(() => {
     changeview(true)
-  }, 5000);
+  }, 7000);
  }) 
  
  function viewCalendar() {
@@ -27,7 +27,7 @@ function App() {
  }
 
   return (
-    <div className="App">
+    <div className="body">
         
       { view === false ? <div>
         <Header />

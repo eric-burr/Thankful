@@ -1,3 +1,10 @@
+:root {
+    --Mushroom: #fef2fe;
+    --Onion: #fd974f;
+    --RedPepper: #C60000;
+    --Driftwood: #805A3B; 
+}
+
 
 .sunday{
     background: white;
@@ -13,8 +20,10 @@
  }
 
 .fade {
+    padding: 70px 0;
+    text-align: center;
     display: inline-block;
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-size: 30px;
     color: black;
     text-transform: none;
@@ -48,3 +57,13 @@
     0% {opacity:0;}
     100% {opacity:1;}
     }
+
+    .body {
+        color: var(--Driftwood);
+        background-color: var(--Mushroom);
+        height: 100vh;
+        font-family: fantasy;
+    }
+    
+
+    

@@ -28,7 +28,7 @@ class Thankfulentry extends Component {
 
     render() {
         return (
-            <div>
+            <div className='inputs'>
                 <form onSubmit={this.submit}>
                 <label>Item 1
                 <input 

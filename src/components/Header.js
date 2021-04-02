@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '../calendar.css'
 
 function Header() {
-    const [quote, newQuote] = useState('thanks')
+    const [quote, newQuote] = useState('')
 
  async function api() {  
     const url = "https://type.fit/api/quotes"
@@ -24,14 +25,12 @@ function Header() {
     useEffect(() => {
          api();
          
-    })
-    
+    },[])
+
 
     return (
-        <div>
-            I am Thankful
-            <h1>{quote}</h1> 
-            <div></div>
+        <div className='background'>
+            <h1 className='fade'>{quote}</h1> 
         </div>
     )
 }
