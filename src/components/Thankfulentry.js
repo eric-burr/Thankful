@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Week from './Week'
 class Thankfulentry extends Component {
     constructor(props) {
         super(props)
@@ -15,15 +15,16 @@ class Thankfulentry extends Component {
     
     submit = (e) => {
         e.preventDefault();
+        const body = {
+            thing1: this.state.thanks1,
+            thing2: this.state.thanks2,
+            thing3: this.state.thanks3
+        }
+        
         const date = new Date().getDate();
         console.log('ding', date)
-        console.log('props', this.props)
-        for(let i=0;i<=30;i++) {
-            if(date === this.props.date[i]) {
-                this.props.date[i] = 'a big long storyyyyyy'
-            }
-        }
-        console.log('modifed array', this.state.date)
+        console.log('name', body)
+        
     }
 
 

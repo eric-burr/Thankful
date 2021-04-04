@@ -16,7 +16,7 @@ function Calandar(props) {
   const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
   return (
-    <div>
+    <div className='calendartop'>
       <div className='week'>
         {day.map((value, index) => (
           <div key={index} className='sunday'>{value}

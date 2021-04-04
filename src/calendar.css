@@ -1,22 +1,24 @@
 :root {
-    --Mushroom: #fef2fe;
-    --Onion: #fd974f;
-    --RedPepper: #C60000;
-    --Driftwood: #805A3B; 
+    --Sky: #75B149;
+    --Sunglow: #D9b44a;
+    --Mountains: #4f6457;
+    --Mist: #acd0c0;
 }
 
 
 .sunday{
     background: white;
-    min-width: 200px;
-    min-height: 40px;
+    min-width: 130px;
+    min-height: 80px;
     border: solid;
     border-right: solid;
 }
 
  .week {
      display: grid;
-     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+     grid-template-columns: repeat(7, 150px);
+     padding-right: 100px;
+     min-height: 30px;
  }
 
 .fade {
@@ -59,8 +61,8 @@
     } */
 
     .body {
-        color: var(--Driftwood);
-        background-color: var(--Mushroom);
+        color: black;
+        background-color: var(--Mist);
         height: 100vh;
         font-family: fantasy;
     }
@@ -84,4 +86,10 @@
         border-left: white;
         border-right: white;
         border-bottom: white;
+    }
+
+    .calendartop {
+        padding-top: 5%;
+        padding-left: 100px;
+        /* padding-right: 100px; */
     }

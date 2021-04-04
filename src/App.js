@@ -17,16 +17,11 @@ function App() {
       dates.push(first)
   }
 
-  // let date = {
-    // day: num
-    // entry: blah blah
-  // } 
-
  useEffect(()=> {
   setTimeout(() => {
     changeview(true)
   }, 1000);
- }) 
+ }, []) 
  
  function viewCalendar() {
    calendarview(!entryview)
