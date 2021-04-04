@@ -16,10 +16,16 @@ function App() {
       ++first
       dates.push(first)
   }
+
+  // let date = {
+    // day: num
+    // entry: blah blah
+  // } 
+
  useEffect(()=> {
   setTimeout(() => {
     changeview(true)
-  }, 7000);
+  }, 1000);
  }) 
  
  function viewCalendar() {
@@ -37,12 +43,12 @@ function App() {
           {entryview === true ? 
           <div> 
             <Thankfulentry date={dates} />
-            <button onClick={viewCalendar}>Calendar</button>
+            <button className='toggle' onClick={viewCalendar}>Calendar</button>
           </div>
           : 
           <div><Needhelp />
           <Calendar dates={dates} />
-          <button onClick={viewCalendar}>Entry</button>
+          <button className='toggle' onClick={viewCalendar}>Entry</button>
            </div>}
           
 

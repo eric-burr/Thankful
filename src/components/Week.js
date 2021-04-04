@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function Week(props) {
     var date = new Date();
@@ -6,23 +6,21 @@ export default function Week(props) {
     var firstdayofmonth = firstDay.getDay();
     var lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0);
     var lastdayofMonth = lastDay.getDate();
-
-    useEffect(()=> {
-        console.log('in use effect', props)
-        
-    })
+    console.log('first day of month', firstdayofmonth)
     
-    // console.log('prpos.dates', props.dates)
+   
+    
     return (
         <div>
             
             <div className='week'>
-            {props.dates.map((value, index) => {
-                return firstdayofmonth<=index && index <= lastdayofMonth ?
+            {props.dates.map((value, index, arr) => {
                 
-                <div key={index} className='sunday'>
-                    {value} 
-                    {/* {index} */}
+                return firstdayofmonth<=index && index <= lastdayofMonth + firstdayofmonth - 1 ?
+                
+                <div  key={index} className='sunday'>
+                    {index - firstdayofmonth + 1}
+                    <button className='mapbutton' onClick={()=> console.log('hi', value - 3)}>click</button>
                 </div> 
                 : 
                  <div key={index} className='sunday'></div>

@@ -16,10 +16,11 @@ class Thankfulentry extends Component {
     submit = (e) => {
         e.preventDefault();
         const date = new Date().getDate();
-        console.log('ding')
+        console.log('ding', date)
+        console.log('props', this.props)
         for(let i=0;i<=30;i++) {
             if(date === this.props.date[i]) {
-                this.props.date[i] = 'a big long story'
+                this.props.date[i] = 'a big long storyyyyyy'
             }
         }
         console.log('modifed array', this.state.date)

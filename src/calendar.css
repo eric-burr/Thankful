@@ -30,15 +30,15 @@
     margin: 0 20px;
     opacity: 0.0;
     animation: fadeIn ease 10s;
-    -webkit-animation: fadeIn ease 10s;
+    /* -webkit-animation: fadeIn ease 4s; */
     }
     
     @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+        0%,100% { opacity: 0; }
+        50% { opacity: 1; }
     }
     
-    @-moz-keyframes fadeIn {
+    /* @-moz-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
     }
@@ -56,7 +56,7 @@
     @-ms-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
-    }
+    } */
 
     .body {
         color: var(--Driftwood);
@@ -65,5 +65,23 @@
         font-family: fantasy;
     }
     
+    .inputs {
+        text-align: center;
+        padding: 200px 0;
+    }
 
+    .toggle {
+        position: relative;
+        top: 15vh;
+    }
     
+    .mapbutton {
+        height: 50%;
+        width: 100%;
+        color: white;
+        background-color: white;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        border-bottom: white;
+    }

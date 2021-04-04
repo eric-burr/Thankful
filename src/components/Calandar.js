@@ -15,8 +15,6 @@ function Calandar(props) {
 
   const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
- 
-
   return (
     <div>
       <div className='week'>

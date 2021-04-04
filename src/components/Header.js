@@ -28,6 +28,8 @@ function Header() {
     },[])
 
 
+    
+
     return (
         <div className='background'>
             <h1 className='fade'>{quote}</h1> 
