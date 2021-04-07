@@ -9,6 +9,9 @@ import '../src/calendar.css'
 function App() {
   const [view, changeview] = useState(false)
   const [entryview, calendarview] = useState(true)
+  const [body, updatedbody] = useState([])
+
+  const date = new Date().getDate();
 
   const dates = [0]
   let first = 0
@@ -37,12 +40,16 @@ function App() {
         <div>
           {entryview === true ? 
           <div> 
-            <Thankfulentry date={dates} />
+            <Thankfulentry 
+            todaysdate={date}
+            body={body}
+             date={dates}
+             />
             <button className='toggle' onClick={viewCalendar}>Calendar</button>
           </div>
           : 
           <div><Needhelp />
-          <Calendar dates={dates} />
+          <Calendar body={body} dates={dates} />
           <button className='toggle' onClick={viewCalendar}>Entry</button>
            </div>}
           

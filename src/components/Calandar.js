@@ -23,7 +23,7 @@ function Calandar(props) {
           </div>
         ))}
       </div>
-          <Week dates={props.dates}/>
+          <Week body={props.body} dates={props.dates}/>
           
     </div>
   )

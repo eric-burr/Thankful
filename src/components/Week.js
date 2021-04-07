@@ -7,6 +7,8 @@ export default function Week(props) {
     var lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0);
     var lastdayofMonth = lastDay.getDate();
     console.log('first day of month', firstdayofmonth)
+
+    const todayDate = new Date().getDate();
     
    
     

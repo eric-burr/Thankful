@@ -15,15 +15,18 @@ class Thankfulentry extends Component {
     
     submit = (e) => {
         e.preventDefault();
-        const body = {
-            thing1: this.state.thanks1,
-            thing2: this.state.thanks2,
-            thing3: this.state.thanks3
+        const body1= [
+            this.state.thanks1,
+            this.state.thanks2,
+            this.state.thanks3
+        ]
+        for(let i=0;i<=2;i++) {
+            this.props.body.push(body1[i])
+            console.log('props', this.props.body)
         }
         
         const date = new Date().getDate();
         console.log('ding', date)
-        console.log('name', body)
         
     }
 
