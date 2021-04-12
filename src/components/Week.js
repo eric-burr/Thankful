@@ -1,5 +1,4 @@
 import React from 'react';
-import EnteredEntry from './EnteredEntry'
 
 export default function Week(props) {
     var date = new Date();
@@ -25,11 +24,11 @@ export default function Week(props) {
             <div className='week'>
             {props.dates.map((value, index, arr) => {
                 
-                return  todayDate == index ?
+                return  todayDate === index ?
                     
                 <div  key={index} className='sunday'>
                     {index - firstdayofmonth + 1}
-                    {props.body}
+                    <div>{props.body.map(value => <li>{value}</li>)}</div>
                     <button className='mapbutton' onClick={()=> console.log('hi', props.body)}>click</button>
                 </div> 
                 : (firstdayofmonth<=index && index <= lastdayofMonth + firstdayofmonth - 1) ?

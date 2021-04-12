@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import Week from './Week'
+
 class Thankfulentry extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-            date: this.props.date
+            date: this.props.date,
+            thanks1: "",
+            thanks2: "",
+            thanks3: "",
+            Prompt: ""
         }
     }
 
@@ -21,13 +25,20 @@ class Thankfulentry extends Component {
             this.state.thanks3
         ]
         for(let i=0;i<=2;i++) {
+            if(this.state.thanks1==='' || this.state.thanks2==='' || this.state.thanks3===''){
+               this.setState({
+                   Prompt: "You must fill out all three!"
+               })
+                return null
+            }
             this.props.body.push(body1[i])
             console.log('props', this.props.body)
         }
-        
-        const date = new Date().getDate();
-        console.log('ding', date)
-        
+        this.setState({
+            thanks1: "",
+            thanks2: "",
+            thanks3: ""
+        })
     }
 
 
@@ -38,11 +49,13 @@ class Thankfulentry extends Component {
                 <label>Item 1
                 <input 
                 name='thanks1'
+                value={this.state.thanks1}
                 onChange={this.handleChange}/>
                 </label>                <br />
                 <label>Item2
                 <input
                 name='thanks2'
+                value={this.state.thanks2}
                 onChange={this.handleChange} />
                 </label>
                 
@@ -50,6 +63,7 @@ class Thankfulentry extends Component {
                 <label>Item 3
                 <input
                 name='thanks3'
+                value={this.state.thanks3}
                 onChange={this.handleChange} />
                 </label>
 
@@ -57,6 +71,7 @@ class Thankfulentry extends Component {
                 <button>Thank You</button>
                 
             </form>
+            {this.state.Prompt}
             </div>
         )
     }
