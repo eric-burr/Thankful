@@ -9,7 +9,8 @@ class Thankfulentry extends Component {
             thanks1: "",
             thanks2: "",
             thanks3: "",
-            Prompt: ""
+            Prompt: "",
+
         }
     }
 
@@ -45,30 +46,34 @@ class Thankfulentry extends Component {
     render() {
         return (
             <div className='inputs'>
-                <form onSubmit={this.submit}>
-                <label>Item 1
+                <div>Today I am grateful for..</div>
+                <form autoComplete='off' onSubmit={this.submit}>
+                {/* <label>Item 1 */}
                 <input 
+                autoFocus
+                className='entry'
                 name='thanks1'
                 value={this.state.thanks1}
                 onChange={this.handleChange}/>
-                </label>                <br />
-                <label>Item2
+                 <br />
+                {/* <label>Item2 */}
                 <input
+                className='entry'
                 name='thanks2'
                 value={this.state.thanks2}
                 onChange={this.handleChange} />
-                </label>
                 
                 <br />
-                <label>Item 3
+                {/* <label>Item 3 */}
                 <input
+                className='entry'
                 name='thanks3'
                 value={this.state.thanks3}
                 onChange={this.handleChange} />
-                </label>
+                {/* </label> */}
 
                 <br />
-                <button>Thank You</button>
+                <button className='entrybutton'>Thank You</button>
                 
             </form>
             {this.state.Prompt}

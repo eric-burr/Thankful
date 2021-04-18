@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './Modal'
 
 export default function Week(props) {
     var date = new Date();
@@ -10,30 +11,23 @@ export default function Week(props) {
 
     const todayDate = new Date().getDate();
     
-    function enterondate() {
-       console.log('enter on date', props.dates[todayDate]);
-       console.log('props.body', props.body)
-       if(todayDate===props.dates[todayDate]) {
-           return props.body 
-       }
-   }
-    
     return (
         <div>
-            <button onClick={enterondate}>enter on date</button>
             <div className='week'>
             {props.dates.map((value, index, arr) => {
                 
                 return  todayDate === index ?
                     
-                <div  key={index} className='sunday'>
+                <div style={{backgroundColor: "lightblue"}} key={index} className='sunday'>
                     {index - firstdayofmonth + 1}
-                    <div>{props.body.map(value => <li>{value}</li>)}</div>
-                    <button className='mapbutton' onClick={()=> console.log('hi', props.body)}>click</button>
+                    {/* <div>{props.body.map(value => <li>{value}</li>)}</div> */}
+                    {/* <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1> */}
+                    <button style={{backgroundColor: "lightblue"}} className='mapbutton' onClick={()=> <Modal />}>click</button>
                 </div> 
                 : (firstdayofmonth<=index && index <= lastdayofMonth + firstdayofmonth - 1) ?
                     
-                    <div className='sunday'>{index - firstdayofmonth + 1}</div> :
+                    <div className='sunday'>{index - firstdayofmonth + 1}
+                    <button className='mapbutton' onClick={()=> <Modal />}>click</button></div> :
                 
                  <div key={index} className='sunday'></div>
             })}
