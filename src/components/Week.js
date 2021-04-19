@@ -10,26 +10,30 @@ export default function Week(props) {
     console.log('first day of month', firstdayofmonth)
 
     const todayDate = new Date().getDate();
-    
+    console.log('todays date', todayDate);
+    console.log('props', props.dates)
     return (
         <div>
             <div className='week'>
             {props.dates.map((value, index, arr) => {
-                
-                return  todayDate === index ?
-                    
-                <div style={{backgroundColor: "lightblue"}} key={index} className='sunday'>
+
+                return  todayDate + firstdayofmonth - 1 === index ?
+
+                <div key={index} className='sunday'>
                     {index - firstdayofmonth + 1}
-                    {/* <div>{props.body.map(value => <li>{value}</li>)}</div> */}
-                    {/* <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1> */}
-                    <button style={{backgroundColor: "lightblue"}} className='mapbutton' onClick={()=> <Modal />}>click</button>
+                    <div>{props.body.map(value => 
+                    <li>{value}</li>
+                    )}
+                    </div>
                 </div> 
                 : (firstdayofmonth<=index && index <= lastdayofMonth + firstdayofmonth - 1) ?
                     
-                    <div className='sunday'>{index - firstdayofmonth + 1}
-                    <button className='mapbutton' onClick={()=> <Modal />}>click</button></div> :
+                    <div className='sunday'>{index - firstdayofmonth +1}
+                    {/* <button className='mapbutton' >click</button> */}
+                    </div> 
+                    :
                 
-                 <div key={index} className='sunday'></div>
+                 <div key={index} className='sunday'>days of previous and next month</div>
             })}
             </div>
             

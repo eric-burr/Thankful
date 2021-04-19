@@ -14,6 +14,7 @@
     border: solid;
     border-right: solid;
     color: black;
+    overflow: scroll;
 }
 
  .week {
@@ -63,7 +64,7 @@
         padding: 10px;
         border-radius: 25px;
         border: 2px solid var(--Sunglow);
-        color: white;
+        color: var(--Mountains);
         font-size: 3vh;
         font-weight: 400;
     }
@@ -73,13 +74,9 @@
         border-color: var(--Mountains);
         height: 55px;
         transition: all 2.5s;
+        color: white;
     }
-    /* .entry:hover{
-        background-color: var(--Mountains);
-        border-color: var(--Mountains);
-        height: 55px;
-        transition: all 2s;
-    } */
+   
     
 
     @keyframes grow {
@@ -104,17 +101,6 @@
         color: var(--Mountains);
         font-size: 4vh;
         top: 15vh;
-    }
-    
-    .mapbutton {
-        height: 50%;
-        width: 100%;
-        color: white;
-        background-color: white;
-        border-top: white;
-        border-left: white;
-        border-right: white;
-        border-bottom: white;
     }
 
     .calendartop {

@@ -23,7 +23,7 @@ function App() {
  useEffect(()=> {
   setTimeout(() => {
     changeview(true)
-  }, 1000);
+  }, 2000);
  }, []) 
  
  function viewCalendar() {
